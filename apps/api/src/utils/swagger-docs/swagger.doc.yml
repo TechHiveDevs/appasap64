@@ -1,0 +1,326 @@
+
+  /deal:
+    get:
+     summary: Get all deals
+     tags: [deal]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/deal'
+ 
+    post:
+      summary: Create deal
+      tags: [deal]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deal'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deal'
+ 
+  /deal/{id}:
+    get:
+      summary: Get deal by id
+      tags: [deal]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deal'
+ 
+    put:
+      summary: Edit deal
+      tags: [deal]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deal'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/deal'
+ 
+    delete:
+      summary: Delete deal
+      tags: [deal]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deal'
+
+  /product:
+    get:
+     summary: Get all products
+     tags: [product]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/product'
+ 
+    post:
+      summary: Create product
+      tags: [product]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/product'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+ 
+  /product/{id}:
+    get:
+      summary: Get product by id
+      tags: [product]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+ 
+    put:
+      summary: Edit product
+      tags: [product]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/product'
+ 
+    delete:
+      summary: Delete product
+      tags: [product]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+
+  /cart:
+    get:
+     summary: Get all carts
+     tags: [cart]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/cart'
+ 
+    post:
+      summary: Create cart
+      tags: [cart]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cart'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+ 
+  /cart/{id}:
+    get:
+      summary: Get cart by id
+      tags: [cart]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+ 
+    put:
+      summary: Edit cart
+      tags: [cart]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/cart'
+ 
+    delete:
+      summary: Delete cart
+      tags: [cart]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+
+  /user:
+    get:
+     summary: Get all users
+     tags: [user]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/user'
+ 
+    post:
+      summary: Create user
+      tags: [user]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+  /user/{id}:
+    get:
+      summary: Get user by id
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+    put:
+      summary: Edit user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/user'
+ 
+    delete:
+      summary: Delete user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+  components:
+    schemas:
+  
+      deal:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          startdate:
+            type: string
+          cart:
+            type: string
+      product:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          name:
+            type: string
+          price:
+            type: number
+          cart:
+            type: string
+      cart:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          user:
+            type: string
+      user:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          name:
+            type: string
+          email:
+            type: string
+          gender:
+            type: string
+          age:
+            type: number
+          password:
+            type: string
